@@ -5,9 +5,9 @@ class FakeModel extends Eloquent
 {
     public $beforeSaveFired = false;
 
-    public function beforeSave()
+    public function beforeSave($model)
     {
-        $this->beforeSaveFired = true;
+        $model->beforeSaveFired = true;
         return false;
     }
 } 
